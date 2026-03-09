@@ -5,9 +5,10 @@ import type { DeckVariant } from "./DeckOfCards"
 export interface CardsSelectionProps {
     onSelectionChange: (selected: CardType[]) => void;
     onDone: () => void;
+    onOpenSaved: () => void;
 }
 
-function CardsSelection({onSelectionChange, onDone} : CardsSelectionProps) {
+function CardsSelection({onSelectionChange, onDone, onOpenSaved} : CardsSelectionProps) {
 
     const [selectedCards, setSelectedCards] = useState<CardType[]>([])
     const [cardsToSelect, setCardsToSelect] = useState<CardType[]>(Object.values(AllCards).map((deck) => (deck.type)))
@@ -53,7 +54,7 @@ function CardsSelection({onSelectionChange, onDone} : CardsSelectionProps) {
                 </div>
 
                 <div className="button-saved-wrapper">
-                    <button className="button-saved" onClick={() => onDone()}>
+                    <button className="button-saved" onClick={() => onOpenSaved()}>
                         Saved combinations
                     </button>
                 </div>

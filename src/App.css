@@ -22,6 +22,11 @@
     align-items: center;
 }
 
+.main-screen:has(.saved-cards-list) {
+    display: grid;
+    row-gap: 20px;
+}
+
 .decks-container {
     display: flex;
     flex-direction: row;
@@ -29,7 +34,7 @@
     height: 100%;
     align-items: center;
     justify-content: space-evenly;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
 
 }
 
@@ -177,10 +182,11 @@
 .button-small {
     height: 50px;
     width: 50px;
-    background-size: cover;
+    background-size: contain;
     border: 1px solid white;
     border-radius: 50%;
     margin: 5px;
+    background-color: black;
 }
 
 .button-done {
@@ -225,6 +231,7 @@
     background-color: black;
     padding: 15px;
     display: inline-block;
+    z-index: 10;
 }
 
 .button-back {
@@ -233,6 +240,14 @@
 
 .button-reload {
     background-image: url(./media/restart.png);
+}
+
+.button-save {
+    background-image: url(./media/save.png);
+}
+
+.button-erase {
+    background-image: url(./media/erase.png);
 }
 
 @media screen and (max-width: 725px) {
@@ -249,4 +264,46 @@
         border-radius: 30px;
         margin: 10px;
     }
+}
+
+.saved-cards-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.date-saved {
+    margin-top: 50px;
+}
+
+.message {
+    position: absolute;
+    display: block;
+    width: 20%;
+    margin: 0px auto;
+    top: 10px;
+    left: 250px;
+    height: 50px;
+    padding: 20px;
+    border-radius: 30px;
+    font-family: 'typewriter', monospace;
+    font-size: medium;
+    z-index: 9;
+}
+
+.message.good {background-color: #bbfeb7;}
+.message.bad {background-color: #ffceda;}
+.message.warning {background-color: #ffffb1;}
+.message.notification {background-color: #b7f5ff;}
+
+.fadeout { animation: 0.5s fade-out forwards; }
+.fadein { animation: 0.5s fade-in forwards; }
+
+@keyframes fade-out {
+    0% {transform: translateX(0); opacity: 1;}
+    100% {transform: translateX(-150%); opacity: 0;}
+}
+
+@keyframes fade-in {
+    0% {transform: translateX(-150%); opacity: 0;}
+    100% {transform: translateX(0); opacity: 1;}
 }

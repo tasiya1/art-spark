@@ -17,9 +17,9 @@ function App() {
 
   return (
     <div className="main-screen">
-        {mode === "selecting" && <CardsSelection onSelectionChange={handleCardsSelection} onDone={() => setMode("presenting")}/>}
+        {mode === "selecting" && <CardsSelection onSelectionChange={handleCardsSelection} onDone={() => setMode("presenting")} onOpenSaved={() => setMode("saved")}/>}
         {mode === "presenting" && <CardsPresentation cardsToShow={selectedCards} onBack={() => setMode("selecting")}/>}
-        {mode === "saved" && <SavedCards/>}
+        {mode === "saved" && <SavedCards onBack={() => setMode("selecting")}/>}
     </div>
   )
 }

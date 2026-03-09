@@ -10,7 +10,7 @@ export type CardType =
 | "texture"
 | "shades"
 
-type CardVariant = {
+export type CardVariant = {
     title: string,
     imageUrl: string
 }
