@@ -18,6 +18,7 @@ type CardVariant = {
 export interface Card {
     type: CardType;
     label: string;
+    uniqueLetter: string;
     variants: CardVariant[];
 }
 
@@ -25,6 +26,7 @@ export const AllCards: Record<CardType, Card> = {
     composition: {
         type: "composition",
         label: "Composition",
+        uniqueLetter: 'A',
         variants: [
             {title: "Diagonal Flow", imageUrl: "./src/media/cards/composition/diagonal.png"},
             {title: "Dominant / Submissive", imageUrl: "./src/media/cards/composition/dominant.png"},
@@ -42,6 +44,7 @@ export const AllCards: Record<CardType, Card> = {
     color: {
         type: "color",
         label: "Color",
+        uniqueLetter: 'B',
         variants: [
             {title: "Baby Blue", imageUrl: "./src/media/cards/colors/babyblue.png"},
             {title: "Brown", imageUrl: "./src/media/cards/colors/brown.png"},
@@ -74,6 +77,7 @@ export const AllCards: Record<CardType, Card> = {
     pattern: {
         type: "pattern",
         label: "Pattern",
+        uniqueLetter: 'C',
         variants: [
             {title: "Crisscross", imageUrl: "./src/media/cards/patterns/crisscross.jpg"},
             { title: "Chevron", imageUrl: "./src/media/cards/patterns/chevron.jpg" },
@@ -92,6 +96,7 @@ export const AllCards: Record<CardType, Card> = {
     palette: {
         type: "palette",
         label: "Color Palette",
+        uniqueLetter: 'D',
         variants: [
             {title: "Cold Tones", imageUrl: "./src/media/cards/palettes/cold.png"},
             {title: "Warm Tones", imageUrl: "./src/media/cards/palettes/warm.png"},
@@ -110,6 +115,7 @@ export const AllCards: Record<CardType, Card> = {
     shapes: {
         type: "shapes",
         label: "Shapes",
+        uniqueLetter: 'E',
         variants: [
             {title: "Star", imageUrl: "./src/media/cards/shapes/star.png"},
             { title: "Heart", imageUrl: "./src/media/cards/shapes/heart.png" },
@@ -125,6 +131,7 @@ export const AllCards: Record<CardType, Card> = {
     symbol: {
         type: "symbol",
         label: "Symbol",
+        uniqueLetter: 'F',
         variants: [
             {title: "A Heart And A Dagger", imageUrl: "./src/media/cards/symbols/heartdagger.webp"},
             { title: "Chain", imageUrl: "./src/media/cards/symbols/chains.jpg" },
@@ -139,6 +146,7 @@ export const AllCards: Record<CardType, Card> = {
     object: {
         type: "object",
         label: "Object",
+        uniqueLetter: 'G',
         variants: [
             { title: "Chair", imageUrl: "./src/media/cards/objects/chair.webp" },
             { title: "Plant", imageUrl: "./src/media/cards/objects/plant.png" },
@@ -160,6 +168,7 @@ export const AllCards: Record<CardType, Card> = {
     constraints: {
         type: "constraints",
         label: "Constraints",
+        uniqueLetter: 'H',
         variants: [
             {title: "One Layer", imageUrl: "./src/media/cards/constraints/onelayer.svg"},
             { title: "15 minutes", imageUrl: "./src/media/cards/constraints/time.png" },
@@ -171,6 +180,7 @@ export const AllCards: Record<CardType, Card> = {
     texture: {
         type: "texture",
         label: "Texture",
+        uniqueLetter: 'I',
         variants: [
             { title: "Glass", imageUrl: "./src/media/cards/textures/glass.jpg" },
             { title: "Metal", imageUrl: "./src/media/cards/textures/metal.jpg" },
@@ -192,6 +202,7 @@ export const AllCards: Record<CardType, Card> = {
     shades: {
         type: "shades",
         label: "Shades",
+        uniqueLetter: 'J',
         variants: [
             { title: "Solid", imageUrl: "./src/media/cards/shades/solid.png" },
             { title: "Cross", imageUrl: "./src/media/cards/shades/cross.png" },

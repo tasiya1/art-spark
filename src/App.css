@@ -1,3 +1,18 @@
+@font-face {
+    font-family: 'ART';
+    src: url(./assets/fonts/bunch/doctor\ punk.otf) format('TrueType');
+}
+
+@font-face {
+    font-family: 'typewriter';
+    src: url(./assets/fonts/bunch/Bohemian\ Typewriter.ttf) format('TrueType');
+}
+
+@font-face {
+    font-family: 'hide';
+    src: url(./assets/fonts/bunch/Starz\ 2.ttf) format('TrueType');
+}
+
 .main-screen {
     width: 100vw;
     height: 100vh;
@@ -28,7 +43,7 @@
 }
 
 .card-deck p {
-    font-family: "Ultra", serif;
+    font-family: 'typewriter', monospace;
 }
 
 .card-title {
@@ -64,16 +79,19 @@
 }
 
 .deck-title {
-    font-family: 'Ultra', sans-serif;
+    font-family: 'typewriter', monospace;
     font-size: x-large;
+    width: 150px;
+    text-align: center;
+    padding-left: 60px;
 }
 
 .app-header {
-    font-family: 'jsMath-cmti10';
+    font-family: 'ART', sans-serif;
 }
 
 .mode-header {
-    font-family:  Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family:  'typewriter', monospace;
     font-style: italic;
     text-align: center;
 }
@@ -81,6 +99,7 @@
 .decks-selection {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     max-width: fit-content;
     background-color: black;
     gap: 15px;
@@ -95,16 +114,44 @@
     font-size: large;
     border: 1px solid grey;
     border-radius: 50%;
-    background-color: white;
+
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    font-family: 'typewriter', monospace, sans-serif;
+        background-color: black;
 }
 
 .deck-option:hover, .deck-option:active {
-    box-shadow: inset 5px 7px 5px rgb(89 118 162 / 53%);;
+    box-shadow: inset 5px 7px 5px rgb(89 118 162 / 53%);
+    background-color: white;
 }
+
+.option-selected {
+    background-color: white;
+}
+
+.full-title {
+    display: none;
+    font-family: 'typewriter';
+}
+
+.first-l-title {
+    font-family: 'hide';
+    font-size: 98pt;
+    color: aliceblue;
+}
+
+.deck-option:hover .first-l-title {
+    display: none;
+}
+
+.deck-option:hover .full-title {
+    display: inline;
+    font-family: 'typewriter';
+}
+
 .decks-two {
     display: flex;
     flex-direction: row;
@@ -139,6 +186,32 @@
 .button-done {
     background-color: white;
     background-image: url(./media/arrow-right.png);
+}
+
+.button-saved-wrapper {
+    border-radius: 30px;
+    margin: 10px;
+    background-color: #eceef3;
+    padding: 20px;
+    width: 150px;
+    height: 300px;
+}
+
+.button-saved-wrapper:hover {
+    background-color: #222223;
+}
+
+.button-saved-wrapper:hover button {
+    color:#eceef3;
+}
+
+.button-saved {
+    background-color: transparent;
+    width: 150px;
+    height: 300px;
+    border: 2px ridge silver;
+    font-family: 'typewriter', monospace;
+    border-radius: 15px;
 }
 
 .menu-buttons {

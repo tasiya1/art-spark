@@ -33,22 +33,32 @@ function CardsSelection({onSelectionChange, onDone} : CardsSelectionProps) {
         <div className="decks-two">
             <div className="decks-selection">
                 {selectedCards.map((card) => (
-                    <div className="deck-option" key={card} onClick={() => {deselectCard(card)}}>
-                        {AllCards[card].label}
+                    <div className="deck-option option-selected" key={card} onClick={() => {deselectCard(card)}}>
+                        <span>{AllCards[card].label}</span>
                     </div>
                 ))}
             </div>
             <div className="decks-selection">
                 {cardsToSelect.map((card) => (
                     <div className="deck-option" key={card} onClick={() => {selectCard(card)}}>
-                        {AllCards[card].label}
+                        <span className="full-title">{AllCards[card].label}</span>
+                        <span className="first-l-title">{AllCards[card].uniqueLetter}</span>
                     </div>
                 ))}
             </div>
             
-            <div className="button-done-wrapper">
-                <button className="button-big button-done" onClick={() => onDone()}></button>
+            <div className="side-buttons-wrapper">
+                <div className="button-done-wrapper">
+                    <button className="button-big button-done" onClick={() => onDone()}></button>
+                </div>
+
+                <div className="button-saved-wrapper">
+                    <button className="button-saved" onClick={() => onDone()}>
+                        Saved combinations
+                    </button>
+                </div>
             </div>
+            
         </div>
 
 
