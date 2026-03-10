@@ -43,7 +43,7 @@ function CardsPresentation({cardsToShow, onBack} : CardsPresentationProps) {
             catch (e) {
                 console.error("error parsing cards history")
                 currentHistory = []
-                setNotification({msg: "error parsing cards history", type: "bad"})
+                setNotification({msg: "Error parsing cards history", type: "bad"})
             }
         }
 
@@ -59,7 +59,7 @@ function CardsPresentation({cardsToShow, onBack} : CardsPresentationProps) {
             JSON.stringify(updatedHistory)
         )
 
-        setNotification({msg: "combination successfully saved!", type: "good"})
+        setNotification({msg: "Combination successfully saved!", type: "good"})
     }
 
     const refreshCard = (key: CardType) => {

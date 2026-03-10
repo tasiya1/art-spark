@@ -20,6 +20,8 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    align-content: start;
+    overflow-x: hidden;
 }
 
 .main-screen:has(.saved-cards-list) {
@@ -34,7 +36,7 @@
     height: 100%;
     align-items: center;
     justify-content: space-evenly;
-    /* flex-wrap: wrap; */
+    flex-wrap: wrap;
 
 }
 
@@ -45,6 +47,10 @@
     align-items: center;
     max-height: fit-content;
     max-width: fit-content;
+}
+
+button {
+    cursor: pointer;
 }
 
 .card-deck p {
@@ -81,6 +87,21 @@
     box-shadow: 0px 5px 5px rgba(93, 93, 93, 0.647);
     border-radius: 10px;
     object-fit: contain;
+    transition: 0.2s;
+}
+
+.last-card:hover, .last-card:hover > p {
+    transform: translateX(5px);
+}
+
+/* .last-card:active {
+    animation: 0.4s flip ease-in-out;
+} */
+
+@keyframes flip {
+    0% { transform: scaleX(1); }
+    50% { transform: scaleX(0); }
+    100% { transform: scaleX(1); }
 }
 
 .deck-title {
@@ -169,8 +190,12 @@
     margin: 10px;
     background-color: black;
     padding: 20px;
+    transition: 0.2s;
 }
 
+.button-done-wrapper:hover {
+    transform: translateX(20px);
+}
 .button-big {
     height: 150px;
     width: 150px;
@@ -201,6 +226,7 @@
     padding: 20px;
     width: 150px;
     height: 300px;
+    transition: 0.2s;
 }
 
 .button-saved-wrapper:hover {
@@ -269,11 +295,27 @@
 .saved-cards-list {
     display: flex;
     flex-direction: column;
+    padding-bottom: 200px;
+}
+
+.saved-record {
+    margin-top: 50px; 
 }
 
 .date-saved {
-    margin-top: 50px;
+
 }
+
+.button-micro {
+    padding: 2px;
+    width: 20px;
+    height: 20px;
+    border: none;
+    margin: 0px 10px;
+    display: inline;
+}
+
+.delete-record { background-image: url(./media/erase-black.png); background-size: cover;}
 
 .message {
     position: absolute;

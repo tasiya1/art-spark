@@ -32,7 +32,7 @@ function DeckOfCards({card, refreshCard} : DeckOfCardsProps) {
             {[...Array(4)].map((_c, i) => (
                 <img className="card" style={{left: `${i * 15 + 10}px`}} src="src\media\card-back.png"></img>
             ))}
-            <img className="card" style={{left: `${4 * 15 + 10}px`}} src={card.cardVariant.imageUrl}
+            <img className="card last-card" style={{left: `${4 * 15 + 10}px`}} src={card.cardVariant.imageUrl}
             onClick={() => {refreshCard(card.title)}}></img>
             
             <p className="card-title">{card.cardVariant.title}</p>
