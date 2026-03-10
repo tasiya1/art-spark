@@ -6,9 +6,10 @@ export interface CardsSelectionProps {
     onSelectionChange: (selected: CardType[]) => void;
     onDone: () => void;
     onOpenSaved: () => void;
+    onDaily: () => void;
 }
 
-function CardsSelection({onSelectionChange, onDone, onOpenSaved} : CardsSelectionProps) {
+function CardsSelection({onSelectionChange, onDone, onOpenSaved, onDaily} : CardsSelectionProps) {
 
     const [selectedCards, setSelectedCards] = useState<CardType[]>([])
     const [cardsToSelect, setCardsToSelect] = useState<CardType[]>(Object.values(AllCards).map((deck) => (deck.type)))
@@ -28,7 +29,24 @@ function CardsSelection({onSelectionChange, onDone, onOpenSaved} : CardsSelectio
     }, [selectedCards, onSelectionChange])
 
     return <>
-        <h1 className="app-header">Art-spark</h1>
+        <div className="app-header">
+            <div className="header-challenge" onClick={onDaily}>Daily challenge</div>
+
+            <h1 className="app-title">
+                <span>A</span>
+                <span>r</span>
+                <span>t</span>
+                <span>-</span>
+                <span>s</span>
+                <span>p</span>
+                <span>a</span>
+                <span>r</span>
+                <span>k</span>
+            </h1>
+
+            <div className="header-challenge">Surprise me!</div>
+        </div>
+        
         <h2 className="mode-header">Please select decks (four recommended):</h2>
 
         <div className="decks-two">

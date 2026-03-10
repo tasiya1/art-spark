@@ -113,7 +113,36 @@ button {
 }
 
 .app-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.header-challenge {
+    margin: 0 20px;
+    font-family: 'typewriter', monospace;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.header-challenge:hover {
+    text-decoration: underline 10px wavy #ffffb1;
+}
+
+.app-title {
     font-family: 'ART', sans-serif;
+    cursor: crosshair;
+}
+
+.app-title span {
+    display: inline-block;
+}
+
+.app-title span:hover {
+    animation: 0.5s flip ease-in-out;
+    animation-fill-mode: backwards;
 }
 
 .mode-header {
