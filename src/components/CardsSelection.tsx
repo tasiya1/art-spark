@@ -7,9 +7,10 @@ export interface CardsSelectionProps {
     onDone: () => void;
     onOpenSaved: () => void;
     onDaily: () => void;
+    onSurpriseMe: () => void;
 }
 
-function CardsSelection({onSelectionChange, onDone, onOpenSaved, onDaily} : CardsSelectionProps) {
+function CardsSelection({onSelectionChange, onDone, onOpenSaved, onDaily, onSurpriseMe} : CardsSelectionProps) {
 
     const [selectedCards, setSelectedCards] = useState<CardType[]>([])
     const [cardsToSelect, setCardsToSelect] = useState<CardType[]>(Object.values(AllCards).map((deck) => (deck.type)))
@@ -44,7 +45,7 @@ function CardsSelection({onSelectionChange, onDone, onOpenSaved, onDaily} : Card
                 <span>k</span>
             </h1>
 
-            <div className="header-challenge">Surprise me!</div>
+            <div className="header-challenge" onClick={onSurpriseMe}>Surprise me!</div>
         </div>
         
         <h2 className="mode-header">Please select decks (four recommended):</h2>
@@ -68,7 +69,8 @@ function CardsSelection({onSelectionChange, onDone, onOpenSaved, onDaily} : Card
             
             <div className="side-buttons-wrapper">
                 <div className="button-done-wrapper">
-                    <button className="button-big button-done" onClick={() => onDone()}></button>
+                    <button className="button-big button-done" onClick={() => onDone()}
+                        disabled={selectedCards.length == 0}></button>
                 </div>
 
                 <div className="button-saved-wrapper">

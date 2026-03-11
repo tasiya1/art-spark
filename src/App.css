@@ -1,3 +1,7 @@
+:root {
+    --main-color: #000000;
+}
+
 @font-face {
     font-family: 'ART';
     src: url(./assets/fonts/bunch/doctor\ punk.otf) format('TrueType');
@@ -156,7 +160,7 @@ button {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(3, 1fr);
     max-width: fit-content;
-    background-color: black;
+    background-color: var(--main-color);
     gap: 15px;
     padding: 20px;
     border-radius: 30px;
@@ -167,7 +171,7 @@ button {
     width: 150px;
     height: 150px;
     font-size: large;
-    border: 1px solid grey;
+    border: 1px solid #ffffff96;
     border-radius: 50%;
 
     display: flex;
@@ -175,7 +179,7 @@ button {
     align-items: center;
     cursor: pointer;
     font-family: 'typewriter', monospace, sans-serif;
-        background-color: black;
+    background-color: var(--main-color);
 }
 
 .deck-option:hover, .deck-option:active {
@@ -217,7 +221,7 @@ button {
     width: 150px;
     border-radius: 30px;
     margin: 10px;
-    background-color: black;
+    background-color: var(--main-color);
     padding: 20px;
     transition: 0.2s;
 }
@@ -226,6 +230,7 @@ button {
     transform: translateX(20px);
 }
 .button-big {
+    background: transparent;
     height: 150px;
     width: 150px;
     background-size: cover;
@@ -240,11 +245,10 @@ button {
     border: 1px solid white;
     border-radius: 50%;
     margin: 5px;
-    background-color: black;
+    background-color: var(--main-color);
 }
 
 .button-done {
-    background-color: white;
     background-image: url(./media/arrow-right.png);
 }
 
@@ -283,7 +287,7 @@ button {
     height: fit-content;
     border-radius: 30px;
     margin: 10px;
-    background-color: black;
+    background-color: var(--main-color);
     padding: 15px;
     display: inline-block;
     z-index: 10;
@@ -313,7 +317,7 @@ button {
     .decks-selection {
         grid-template-columns: repeat(2, 1fr);
         max-width: fit-content;
-        background-color: black;
+        background-color: var(--main-color);
         gap: 15px;
         padding: 20px;
         border-radius: 30px;
@@ -342,6 +346,28 @@ button {
     border: none;
     margin: 0px 10px;
     display: inline;
+    background: transparent;
+    background-size: cover;
+}
+
+.button-small.close {
+    background-image: url(./media/close.png);
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.button-theme-button {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background-color: white;
+    background-image: url(./media/color-palette.png);
+    transition: 0.3s;
+}
+
+.button-theme-button:hover {
+    transform: rotate(360deg);
 }
 
 .delete-record { background-image: url(./media/erase-black.png); background-size: cover;}
@@ -377,4 +403,40 @@ button {
 @keyframes fade-in {
     0% {transform: translateX(-150%); opacity: 0;}
     100% {transform: translateX(0); opacity: 1;}
+}
+
+.theme-selection-window {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: white;
+    border-radius: 30px;
+    width: fit-content;
+    height: fit-content;
+    padding: 20px 30px;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0px 2px 5px #3c3c3c92;
+}
+
+.theme-selection-window h2 {
+    font-family: 'typewriter', monospace;;
+}
+
+.theme-color-option-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0px;
+    width: fit-content;
+    border-radius: 30px;
+    overflow:hidden;
+}
+
+.theme-color-option {
+    width: 50px;
+    height: 50px;
+    outline: 1px solid white;
+    border-radius: 10px;
 }

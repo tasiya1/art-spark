@@ -17,7 +17,8 @@ function getSeedRandom(max: number) :number {
 }
 
 function getDailyCombination() {
-    const numberOfCombinations = getSeedRandom(4)
+    let numberOfCombinations = getSeedRandom(4)
+    if (numberOfCombinations == 0) numberOfCombinations = 1
     const existing = Object.keys(AllCards) as CardType[]
     const combinations : SavedCard[] = []
 
