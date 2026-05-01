@@ -131,6 +131,11 @@ button {
     cursor: pointer;
 }
 
+.header-challenge.hub {
+    color: rgb(255, 72, 0);
+    font-weight: 900;
+}
+
 .header-challenge:hover {
     text-decoration: underline 10px wavy #ffffb1;
 }
@@ -171,7 +176,7 @@ button {
     width: 150px;
     height: 150px;
     font-size: large;
-    border: 1px solid #ffffff96;
+    border: 1px solid #ffffffd0;
     border-radius: 50%;
 
     display: flex;

@@ -45,10 +45,12 @@ function CardsSelection({onSelectionChange, onDone, onOpenSaved, onDaily, onSurp
                 <span>k</span>
             </h1>
 
+
+            <div className="header-challenge hub" onClick={onSurpriseMe}>Hub</div>
             <div className="header-challenge" onClick={onSurpriseMe}>Surprise me!</div>
         </div>
         
-        <h2 className="mode-header">Please select decks (four recommended):</h2>
+        <h2 className="mode-header">Select decks (four recommended):</h2>
 
         <div className="decks-two">
             <div className="decks-selection">
